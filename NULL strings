@@ -1,0 +1,49 @@
+//concatenating two Strings,one is empty and the other is NULL ====> gives NULL string or empty string?? 
+//If an operand of string concatenation is null , an empty string is substituted. 
+//Otherwise, any non-string argument is converted to its string representation by invoking the virtual ToString method inherited from type object
+
+#include<stdio.h>
+#include<string.h>
+int main()
+{
+    char *str = '\0';   ///intializing NULL string
+    char str1[20];     //creating empty string
+    strcat(str,str1);
+    
+   
+    printf("%s",str);
+    printf("%d",strlen(str)); ===>ouput is NULL
+    
+}
+
+******************************************************************************************************************
+//concatenating two strings that are empty ======>returns empty string with strlen 0
+
+#include <stdio.h>
+#include <string.h>
+
+#define DEST_SIZE 40
+
+char dest[DEST_SIZE]="";
+
+int main()
+{
+	strcat(dest, "");
+	printf("%s",dest);
+	printf("%d",strlen(dest));
+
+	return 0;
+}
+
+***********************************************************************************************************************
+String length of empty and NULL strings
+
+When you run strlen, you're asking it "Go to this address, count the number of non-zero bytes you find there, and return it.
+. A string like "" is actually allocated physical memory, the first byte of which is a zero, so there are no non-zero bytes there, 
+and it correctly reports 0. Try printf("%p", "")--it will print a real address. 
+
+NULL is not a valid pointer to any object in memory, so strlen(NULL) has no meaning. 
+What it actually does is up to the implementation. 
+It might very well return a number, or crash, or do anything else.
+
+
