@@ -1,0 +1,37 @@
+Question : copy a string to another string
+***Clarifications***
+1.Is the string finite?
+2.How long is the String?
+
+***ALgorithm***
+1.Take a string as input from user
+2.Find the length of the string
+3.create another string of same length 
+4.Run through a loop and copy each letter into the second string.
+
+***CODE***
+#include<stdio.h>
+#include<string.h>
+
+int main()
+{
+    char string1[25];
+    printf("Enter the string:");
+    fgets(string1,25,stdin);
+    int n= strlen(string1);
+    char string2[n];
+    int i;
+    for( i=0;i<strlen(string1);i++)
+    {
+        string2[i]=string1[i];
+    }
+    string2[i]='\0';  //After the copying is done, we need to make sure the second string ends with the NULL, otherwise, it shows garbage value.
+    printf("\nThe copied string is :%s",string2);
+}
+
+***Test scenarios***
+1.String 1 is NULL ?
+2.What if string 2 is NULL?
+3.What if the string2 is smaller than string1
+4.what is string 1 is empty string?
+5.what is string1 has more values than MAX_INT size?
