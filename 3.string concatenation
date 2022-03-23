@@ -1,0 +1,98 @@
+//concatenate two strings
+***clarifications***
+1.Is the extra string allowed
+2.Is string finite?
+3.If strings are NULL?
+
+***Algorithm***
+1.Take string1 as input
+2.Take string2 as input
+3.create 3rd string of size string1+string2 
+4.copy string1 to string 3 
+4.copy string 2 to string 3 from the last character of string1.
+
+*** ALgorithm2***
+If extra string is not given
+1.traverse till the end of the string,
+2.copy string2 to string1
+3.make end character as NULL
+
+***CODE snippet1***
+#include<stdio.h>
+#include<string.h>
+
+int main()
+{
+    char string1[25],string2[25];
+    printf("Enter the first string:");
+    fgets(string1,25,stdin);
+    printf("Enter the second string:");
+    fgets(string2,25,stdin);
+    int n= strlen(string1);
+    int m= strlen(string2);
+    //printf("%d",n);
+    char string3[11];
+    int i;
+    
+    for(i=0;i<n;i++)
+    {
+        string3[i]=string1[i];
+    }
+    int j=0;
+    for(i=(n-1);i<(m+n);i++)
+    {
+        string3[i]=string2[j];
+        
+        j++;
+    }
+   
+    string3[i]='\0';
+    
+    printf("%s",string3);
+
+}
+
+***CODE snippet 2***
+
+#include<stdio.h>
+#include<string.h>
+
+int main()
+{
+    char string1[25],string2[25];
+    printf("Enter the first string:");
+    fgets(string1,25,stdin);
+    printf("Enter the second string:");
+    fgets(string2,25,stdin);
+    int i,j;
+    
+    for(i=0;string1[i]!='\0';i++);  //this loop is to reach the end of the string
+    
+    for(j=0;string2[j]!='\0';j++) //after that, copying from str2 to str1  //But this has a challenge ,.,what if str1 is not enough to concatenate??
+    {
+        
+    
+    
+        string1[i] = string2[j];
+        printf("%c",string1[i]);
+        i++;
+    }
+ 
+   
+    string1[i]='\0';
+    
+    printf("%s",string1);
+
+}
+
+***Test sceanrios***
+1.if second string Empty string?
+2.If first string is empty?
+3.Both the strings are null?
+4.Both are empty?
+5.String 1 is not big enough to concatenate srting2?
+6.String 1 is empty and string2 is NULL?
+7.String1 is NULL and string2 is empty?
+
+
+
