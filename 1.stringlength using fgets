@@ -1,0 +1,33 @@
+Question.Find the length of the string.
+***Clarifications***
+1.Is string NULL?
+2.Is there any possibility of string is empty
+3.String is of finite length?
+
+***Algorithm***
+1.Take string input from user
+2.Brute force approach, loop through the string until NULL is found which means end of string
+3.Keep a count of iterations 
+4.The count gives the length.
+
+***CODE***
+#include<stdio.h>
+#include<string.h>
+int main()
+{
+    char string[20];
+    int count=-1;     //here we are intiating the count to -1 because fgets gives the string length including the NULL character count
+    printf("Enter the string:");
+    fgets(string,20,stdin);
+    for(int i=0;string[i]!='\0';i++)
+    {
+        count++;
+    }
+    printf("\n The no of characters are:%d",count);
+    printf("\n %s",string);
+}
+
+***Test Scenarios***
+1.What if the string is NULL?
+2.What if the string is empty?
+3.What if the string is very huge ,more than the MAX-INT value?
