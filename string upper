@@ -1,0 +1,43 @@
+//Make a lowercase string to upper case
+***Questions***
+1.Is the string finite?
+2.can we assume that the string is not null?
+3.Can we consider the string is not empty
+
+***Algorithm***
+1.Take input from user
+2.according to ascii value the lower case is exactly 32 greater than upper case.
+3. so adding removing 32 from each characer will give upper case letters
+
+***CODE***
+#include <stdio.h>
+#include<string.h>
+
+
+int main()
+{
+    char string[11] = "hello world";
+    int i=0;
+    while(string[i]!='\0')
+    {
+        if(string[i]>='a' && string[i]<='z')
+        string[i]=string[i]-32;  //this makes the string to upper case.
+        i++;
+        
+    }
+    string[i]='\0';   //making the last character of the string asa NULL
+    printf("%s",string);
+  
+
+    return 0;
+}
+
+***Test cases***
+1.What happens if string is NULL
+2.What happens if it is empty ?
+3.What happens if the string has only white spaces?
+4.what if,the string length is more than 32567 which is max_int?
+5.what if the string contains characters which are less than 32 ascii? will it print the negative value?  ------->it will not print negative value.
+6.What happens if the value is substracted by the same number.it should print NULL since the ascii value of NULL is 0. But it wil print empty string.
+
+
