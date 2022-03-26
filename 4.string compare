@@ -1,0 +1,46 @@
+//To compare two strings.
+***Questions to be asked***
+1.Are strings equal?
+2.Are the strings case sensitive?
+3.What if one of the string is empty?
+4.Any of the strings are NULL?
+
+***Algorithm***
+1.Input two strings and compare them character by character.
+2.Before doing that, we can findout the length of the strings.
+3.If the lengths are not equal, we don't have to compare at all. which reduces time complexity.
+4.After comparision if strings are equal, then print they are equal
+
+***CODE***
+
+#include<stdio.h>
+#include<string.h>
+int main()
+{
+    char string1[] = "hello world";
+    char string2[] = "hello world 2";
+    
+    int i=0;
+    int n= strlen(string1);
+    int m= strlen(string2);
+    if(m == n)
+    {
+      while(i<n)
+        {
+            if(string1[i] == string2[i])
+             i++;
+        }
+       
+         printf("Strings are equal");
+    }  
+    else
+    {
+        printf("Both the strings are different");
+    }
+    return 0;
+}
+
+***TEst cases***
+1.What if either of the strings are NULL
+2.What if either of the strings are empty
+3.What if the string length is not finite
