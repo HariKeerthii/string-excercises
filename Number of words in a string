@@ -1,0 +1,23 @@
+#include <stdio.h>
+#include<string.h>
+
+
+int main()
+{
+    char string[30] = "happy face";
+    int i=0;int count=1;
+    while(string[i]!='\0')
+    {
+      if(string[i] == ' ')
+      count++;
+      i++;
+        
+    }
+    printf("%d words are in the string",count);
+  
+
+    return 0;
+}
+
+
+***SInce there should be a space between the words, the spaces will give the count of words.***
